@@ -21,6 +21,10 @@ func (a Strings) Contains(s string) bool {
 	return false
 }
 
+func (a Strings) MarshalJSON() ([]byte, error) {
+	return json.Marshal(a)
+}
+
 func (a *Strings) UnmarshalJSON(b []byte) error {
 	d := json.NewDecoder(bytes.NewBuffer(b))
 	t, err := d.Token()
