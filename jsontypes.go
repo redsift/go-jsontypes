@@ -22,7 +22,7 @@ func (a Strings) Contains(s string) bool {
 }
 
 func (a Strings) MarshalJSON() ([]byte, error) {
-	return json.Marshal(a)
+	return json.Marshal([]string(a))
 }
 
 func (a *Strings) UnmarshalJSON(b []byte) error {
